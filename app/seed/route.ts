@@ -102,7 +102,7 @@ export async function GET() {
     await sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
 
     // Run seeders inside transaction
-    await sql.begin(async (sql) => {
+    await sql.begin(async () => {
       await seedUsers();
       await seedCustomers();
       await seedInvoices();
